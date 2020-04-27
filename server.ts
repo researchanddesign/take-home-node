@@ -1,16 +1,17 @@
 import 'zone.js/dist/zone-node';
 
-import { APP_BASE_HREF } from '@angular/common';
-import { ngExpressEngine } from '@nguniversal/express-engine';
-import * as express from 'express';
 import { existsSync } from 'fs';
 import { join } from 'path';
+import { APP_BASE_HREF } from '@angular/common';
+import { ngExpressEngine } from '@nguniversal/express-engine';
+import { Express } from 'express';
+import * as express from 'express';
 
 import { AppServerModule } from './src/main.server';
 import ApiServer from './src/server/api';
 
 // The Express app is exported so that it can be used by serverless Functions.
-export function app() {
+export const app = (): core.Express => {
 	const server = express();
 	if (process.env.NODE_ENV === 'production') {
 		const distFolder = join(process.cwd(), 'dist/take-home-frontend/browser');
@@ -44,18 +45,18 @@ export function app() {
 	server.use('/api', ApiServer);
 
 	return server;
-}
+};
 
-function run() {
+const run = (): void => {
 	const port = process.env.PORT || 4000;
-	console.log('here', port);
 
 	// Start up the Node server
 	const server = app();
 	server.listen(port, () => {
+		// eslint-disable-next-line no-console
 		console.log(`Node Express server listening on http://localhost:${port}`);
 	});
-}
+};
 
 run();
 
