@@ -1,27 +1,21 @@
-# TakeHomeFrontend
+# Take Home Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Build a simple todo list ordered by length. We've allotted 4 hours to finish this project. If you have not completed the project in that time, we ask that you submit the code you have. This will better help us evaluate your proficiency and will ultimately help us ensure that we're a good fit for you and that you're a good fit for us.
 
-## Development server
+If you have any questions please reach out to us on our slack channel. If a slack channel has not been setup for you yet, please get in touch with us via email.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requirements
 
-## Code scaffolding
+- A user should be able to add a new todo item.
+- A user should be able to edit a todo item.
+- A user should be able to delete a todo item.
+- All items should be ordered according to the length of the item.
+- All items should be paginated (10 items per page).
+- There should be a visual distinction between complete and incomplete items.
+- All items, and any related state, should persist upon reload.
+- Code should pass lint checks and get auto formatted with prettier settings.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Development
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- To start the dev server run `npm start` which will concurrently run the back-end and front-end.
+- The back-end runs on port 4000 and the front-end runs on port 4200.

@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,19 +93,25 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
           }
         },
-				"lint": {
-					"builder": "@angular-eslint/builder:lint",
-					"options": {
-						"eslintConfig": ".eslintrc.js",
-						"tsConfig": ["tsconfig.app.json", "tsconfig.spec.json"],
-						"exclude": ["**/node_modules/**"]
-					}
-				},
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "eslintConfig": ".eslintrc.js",
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -135,7 +142,9 @@
               ],
               "sourceMap": false,
               "optimization": true,
-              "externalDependencies": ["knex"]
+              "externalDependencies": [
+                "knex"
+              ]
             }
           }
         },
@@ -166,6 +175,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "take-home-frontend"
 }

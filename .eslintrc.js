@@ -2,7 +2,10 @@
  * Borrowed from https://github.com/angular-eslint/angular-eslint/blob/2d28fc7/packages/integration-tests/fixtures/angular-cli-workspace/.eslintrc.js
  */
 module.exports = {
-	extends: ['plugin:prettier/recommended'],
+	extends: [
+		'plugin:@typescript-eslint/recommended',
+		'plugin:prettier/recommended'
+	],
 	overrides: [
 		{
 			files: ['*.ts'],
@@ -12,7 +15,7 @@ module.exports = {
 				sourceType: 'module',
 				project: './tsconfig.json'
 			},
-			plugins: ['@typescript-eslint', '@angular-eslint'],
+			plugins: ['@typescript-eslint', '@angular-eslint', 'import', 'no-null', 'prefer-arrow'],
 			rules: {
 				'@typescript-eslint/array-type': 'off',
 				'arrow-parens': 'off',
@@ -80,7 +83,68 @@ module.exports = {
 				'@angular-eslint/no-output-rename': 'error',
 				'@angular-eslint/no-outputs-metadata-property': 'error',
 				'@angular-eslint/use-lifecycle-interface': 'warn',
-				'@angular-eslint/use-pipe-transform-interface': 'error'
+				'@angular-eslint/use-pipe-transform-interface': 'error',
+				'arrow-body-style': 'error',
+				'arrow-parens': 'off',
+				camelcase: 'error',
+				'comma-dangle': 'off',
+				complexity: 'off',
+				'constructor-super': 'error',
+				curly: 'error',
+				'dot-notation': 'error',
+				'eol-last': 'error',
+				eqeqeq: ['error', 'smart'],
+				'guard-for-in': 'error',
+				'id-blacklist': ['error', 'any', 'Number', 'number', 'String', 'string', 'Boolean', 'boolean', 'Undefined'],
+				'id-match': 'error',
+				'import/order': 'error',
+				'max-classes-per-file': ['error', 1],
+				'max-len': 'off',
+				'new-parens': 'error',
+				'no-bitwise': 'error',
+				'no-caller': 'error',
+				'no-cond-assign': 'error',
+				'no-console': 'error',
+				'no-debugger': 'error',
+				'no-empty': 'error',
+				'no-eval': 'error',
+				'no-fallthrough': 'off',
+				'no-invalid-this': 'off',
+				'no-multiple-empty-lines': 'error',
+				'no-new-wrappers': 'error',
+				'no-null/no-null': 'error',
+				'no-return-await': 'error',
+				'no-shadow': [
+					'error',
+					{
+						hoist: 'all'
+					}
+				],
+				'no-throw-literal': 'error',
+				'no-trailing-spaces': 'error',
+				'no-undef-init': 'error',
+				'no-underscore-dangle': 'off',
+				'no-unsafe-finally': 'error',
+				'no-unused-expressions': 'error',
+				'no-unused-labels': 'error',
+				'no-var': 'error',
+				'object-shorthand': 'error',
+				'one-var': ['error', 'never'],
+				'prefer-arrow/prefer-arrow-functions': 'error',
+				'prefer-const': 'error',
+				'quote-props': ['error', 'as-needed'],
+				radix: 'error',
+				'space-before-function-paren': [
+					'error',
+					{
+						anonymous: 'never',
+						asyncArrow: 'always',
+						named: 'never'
+					}
+				],
+				'spaced-comment': 'error',
+				'use-isnan': 'error',
+				'valid-typeof': 'off',
 			}
 		},
 		{
