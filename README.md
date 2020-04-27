@@ -1,6 +1,6 @@
 # Take Home Project
 
-Build a simple todo list ordered by length. We've allotted 4 hours to finish this project. If you have not completed the project in that time, we ask that you submit the code you have. This will better help us evaluate your position and will ultimately ensure that we're a good fit for you and that you're a good fit for us.
+Build a simple todo list ordered by length. We've allotted 4 hours to finish this project. If you have not completed the project in that time, we ask that you submit the code you have. This will better help us evaluate your proficiency and will ultimately help us  that we're a good fit for you and that you're a good fit for us.
 
 If you have any questions please reach out to us on our slack channel. If a slack channel has not been setup for you yet, please get in touch with us via email.
 
