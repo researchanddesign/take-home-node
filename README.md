@@ -4,9 +4,9 @@ Build a simple todo list ordered by length. We've allotted 4 hours to finish thi
 
 If you have any questions please reach out to us on our slack channel. If a slack channel has not been setup for you yet, please get in touch with us via email.
 
-## Requirements
+## Project Requirements
 
-- Fix bug in server. The front-end is unable to communicate with the API. If you can't find the bug in 15 mins, ping us on slack so we can help you figure it out and get on your way.
+- Fix bug in server. The front-end is unable to communicate with the API. If you can't find the bug in 15 mins, ping us on slack so we can help you figure it out and get you working on the rest of the problem.
 - A user should be able to add a new todo item.
 - A user should be able to edit a todo item.
 - A user should be able to delete a todo item.
