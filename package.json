@@ -16,7 +16,7 @@
     "prerender": "ng run take-home-frontend:prerender",
     "test": "concurrently \"npm run test-server\" \"npm run test-angular\"",
     "test-angular": "ng test",
-    "test-server": "export NODE_ENV=test && export PORT=3001 && ts-node node_modules/jasmine/bin/jasmine",
+    "test-server": "export NODE_ENV=test && export PORT=3001 && npm run ts-node node_modules/jasmine/bin/jasmine --",
     "ts-node": "tsc --noEmit && TS_NODE_TRANSPILE_ONLY=true ts-node --"
   },
   "private": true,
