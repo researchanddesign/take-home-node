@@ -4,6 +4,8 @@ import { existsSync } from 'fs';
 import { join } from 'path';
 import { APP_BASE_HREF } from '@angular/common';
 import { ngExpressEngine } from '@nguniversal/express-engine';
+import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 import { Express } from 'express';
 import * as express from 'express';
 
@@ -13,6 +15,16 @@ import ApiServer from './src/server/api';
 // The Express app is exported so that it can be used by serverless Functions.
 export const app = (): Express => {
 	const server = express();
+	server.use(bodyParser.json());
+	server.use(bodyParser.urlencoded({ extended: true }));
+	server.use(
+		cors({
+			origin: [
+				'http://localhost:4000'
+			],
+			optionsSuccessStatus: 200 // https://github.com/expressjs/cors/commit/5dae6d8
+		})
+	);
 	if (process.env.NODE_ENV === 'production') {
 		const distFolder = join(process.cwd(), 'dist/take-home-frontend/browser');
 		const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
