@@ -1,6 +1,6 @@
 import 'jasmine';
 
-import using from '../support/jasmineProvider';
+// import using from '../support/jasmineProvider';
 
 describe('Take home project', () => {
 	describe('Sample test', () => {
