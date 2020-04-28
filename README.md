@@ -6,6 +6,7 @@ If you have any questions please reach out to us on our slack channel. If a slac
 
 ## Requirements
 
+- Fix bug in server. The front-end is unable to communicate with the API. If you can't find the bug in 15 mins, ping us on slack so we can help you figure it out and get on your way.
 - A user should be able to add a new todo item.
 - A user should be able to edit a todo item.
 - A user should be able to delete a todo item.
