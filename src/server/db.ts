@@ -41,8 +41,7 @@ export default class DB {
 	}
 
 	public deleteLists(): Promise<void> {
-		return this.connection(DB.TABLE_LIST)
-			.delete();
+		return this.connection(DB.TABLE_LIST).delete();
 	}
 
 	public getTodos(listId: number, search?: string): Promise<ITodo[]> {

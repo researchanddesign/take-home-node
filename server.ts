@@ -19,9 +19,7 @@ export const app = (): Express => {
 	server.use(bodyParser.urlencoded({ extended: true }));
 	server.use(
 		cors({
-			origin: [
-				'http://localhost:4000'
-			],
+			origin: ['http://localhost:4000'],
 			optionsSuccessStatus: 200 // https://github.com/expressjs/cors/commit/5dae6d8
 		})
 	);
