@@ -12,7 +12,8 @@ export default class DB {
 
 	public static async sharedInstance(): Promise<DB> {
 		if (!this.db) {
-			this.db = new DB('./dev.sqlite');
+			const dbPath = process.env.NODE_ENV === 'test' ? './test.sqlite' : './dev.sqlite';
+			this.db = new DB(dbPath);
 			await this.db.migrate();
 		}
 		return this.db;

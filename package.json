@@ -7,14 +7,17 @@
     "start-angular": "ng serve",
     "start-server": "backpack dev | pino-pretty -c",
     "build": "ng build",
-    "test": "ng test",
     "lint": "eslint . --ext .ts,.component.html --ignore-path .gitignore",
     "lint-fix": "eslint . --ext .ts,.component.html --ignore-path .gitignore --fix",
     "e2e": "ng e2e",
     "dev:ssr": "ng run take-home-frontend:serve-ssr",
     "serve:ssr": "node dist/take-home-frontend/server/main.js",
     "build:ssr": "ng build --prod && ng run take-home-frontend:server:production",
-    "prerender": "ng run take-home-frontend:prerender"
+    "prerender": "ng run take-home-frontend:prerender",
+    "test": "concurrently \"npm run test-server\" \"npm run test-angular\"",
+    "test-angular": "ng test",
+    "test-server": "export NODE_ENV=test && export PORT=3001 && ts-node node_modules/jasmine/bin/jasmine",
+    "ts-node": "tsc --noEmit && TS_NODE_TRANSPILE_ONLY=true ts-node --"
   },
   "private": true,
   "dependencies": {
