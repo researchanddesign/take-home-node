@@ -55,13 +55,6 @@ module.exports = {
 					}
 				],
 				'no-empty': 'off',
-				'@typescript-eslint/no-inferrable-types': [
-					'error',
-					{
-						ignoreParameters: true
-					}
-				],
-				'@typescript-eslint/no-non-null-assertion': 'off',
 				'no-fallthrough': 'error',
 				'@typescript-eslint/no-var-requires': 'off',
 				'quote-props': ['error', 'as-needed'],
@@ -84,6 +77,12 @@ module.exports = {
 				'@angular-eslint/no-outputs-metadata-property': 'error',
 				'@angular-eslint/use-lifecycle-interface': 'warn',
 				'@angular-eslint/use-pipe-transform-interface': 'error',
+				'@typescript-eslint/no-explicit-any': 'off',
+				'@typescript-eslint/no-inferrable-types': 'off',
+				'@typescript-eslint/no-parameter-properties': 'off',
+				'@typescript-eslint/no-use-before-define': 'off',
+				'@typescript-eslint/no-non-null-assertion': ['off'],
+				'@typescript-eslint/explicit-function-return-type': ['off'],
 				'arrow-body-style': 'error',
 				'arrow-parens': 'off',
 				camelcase: 'error',
