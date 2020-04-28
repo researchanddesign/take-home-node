@@ -11,7 +11,7 @@ import { AppServerModule } from './src/main.server';
 import ApiServer from './src/server/api';
 
 // The Express app is exported so that it can be used by serverless Functions.
-export const app = (): core.Express => {
+export const app = (): Express => {
 	const server = express();
 	if (process.env.NODE_ENV === 'production') {
 		const distFolder = join(process.cwd(), 'dist/take-home-frontend/browser');

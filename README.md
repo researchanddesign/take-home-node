@@ -19,3 +19,10 @@ If you have any questions please reach out to us on our slack channel. If a slac
 
 - To start the dev server run `npm start` which will concurrently run the back-end and front-end.
 - The back-end runs on port 4000 and the front-end runs on port 4200.
+
+## Dependencies
+
+- This app uses [knexjs](http://knexjs.org/) for interacting with the database. It has been setup to use sqlite, and no configuration is needed.
+- Typescript
+- Angular 9
+- We've included [material](https://material.angular.io/), in case you have extra time and want to add a little extra pop to the app.
