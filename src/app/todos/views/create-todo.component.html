@@ -1,0 +1,27 @@
+<h4>Create To Do</h4>
+<div class="form-container">
+	<form [formGroup]="todoForm" (submit)="submit(todoForm.value)">
+		<mat-form-field class="form-field" appearance="outline">
+			<mat-label>Name</mat-label>
+			<input matInput formControlName="name" />
+			<mat-error *ngIf="todoForm.controls.name.touched && todoForm.controls.name.invalid">
+				<span *ngIf="todoForm.controls.name.errors.required">This field is mandatory.</span>
+			</mat-error>
+		</mat-form-field>
+		<mat-form-field class="form-field" appearance="outline" *ngIf="lists && lists.length > 0">
+			<mat-label>List</mat-label>
+			<mat-select formControlName="listId">
+				<mat-option *ngFor="let list of lists" [value]="list.id">
+					{{ list.name }}
+				</mat-option>
+			</mat-select>
+			<mat-error *ngIf="todoForm.controls.listId.touched && todoForm.controls.listId.invalid">
+				<span *ngIf="todoForm.controls.listId.errors.required">This field is mandatory.</span>
+			</mat-error>
+		</mat-form-field>
+		<div class="form-field">
+			<a mat-raised-button [routerLink]="['/', listId, 'todos']">Back to list</a>
+			<button mat-raised-button color="primary" type="submit">Submit</button>
+		</div>
+	</form>
+</div>

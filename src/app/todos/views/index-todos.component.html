@@ -1,0 +1,31 @@
+<h4>
+	View To Do's for List :<ng-container *ngIf="list"> {{ list.name }}</ng-container>
+</h4>
+<table mat-table [dataSource]="todos" class="mat-elevation-z8 demo-table">
+	<ng-container matColumnDef="id">
+		<th mat-header-cell *matHeaderCellDef>ID</th>
+		<td mat-cell *matCellDef="let todo">{{ todo.id }}</td>
+	</ng-container>
+	<ng-container matColumnDef="name">
+		<th mat-header-cell *matHeaderCellDef>Name</th>
+		<td mat-cell *matCellDef="let todo">{{ todo.name }}</td>
+	</ng-container>
+	<ng-container matColumnDef="createdAt">
+		<th mat-header-cell *matHeaderCellDef>Created At</th>
+		<td mat-cell *matCellDef="let todo">{{ todo.createdAt }}</td>
+	</ng-container>
+	<ng-container matColumnDef="updatedAt">
+		<th mat-header-cell *matHeaderCellDef>Updated At</th>
+		<td mat-cell *matCellDef="let todo">{{ todo.updatedAt }}</td>
+	</ng-container>
+	<ng-container matColumnDef="actions">
+		<th mat-header-cell *matHeaderCellDef>Actions</th>
+		<td mat-cell *matCellDef="let todo">
+			<a mat-button [routerLink]="['/', list.id, 'todos', todo.id]">View</a>
+			<a mat-button [routerLink]="['/', list.id, 'todos', todo.id, 'edit']">Edit ToDo</a>
+			<button mat-button (click)="confirmDelete(todo.id)">Delete ToDo</button>
+		</td>
+	</ng-container>
+	<tr mat-header-row *matHeaderRowDef="['id', 'name', 'createdAt', 'updatedAt', 'actions']"></tr>
+	<tr mat-row *matRowDef="let row; columns: ['id', 'name', 'createdAt', 'updatedAt', 'actions']"></tr>
+</table>

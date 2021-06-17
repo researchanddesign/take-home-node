@@ -1,2 +1,12 @@
-<h1>Take Home Project</h1>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<h1>Assignment</h1>
+		<span class="menu-spacer"></span>
+		<div>
+			<a mat-button [routerLink]="'/lists'"> Lists </a>
+		</div>
+	</mat-toolbar-row>
+</mat-toolbar>
+<div style="padding: 30px">
+	<router-outlet></router-outlet>
+</div>

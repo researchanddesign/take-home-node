@@ -23,6 +23,14 @@ export default class DB {
 		return this.connection.select().from(DB.TABLE_LIST);
 	}
 
+	public getList(id: number): Promise<IList[]> {
+		return this.connection
+			.select()
+			.from(DB.TABLE_LIST)
+			.where({ id })
+			.first();
+	}
+
 	public addList(name: string): Promise<void> {
 		const now = new Date().toISOString();
 		return this.connection(DB.TABLE_LIST).insert({
@@ -51,7 +59,36 @@ export default class DB {
 			.where({ listId });
 	}
 
-	/** TODO: todo CRUD */
+	public getTodo(id: number): Promise<IList[]> {
+		return this.connection
+			.select()
+			.from(DB.TABLE_TODO)
+			.where({ id })
+			.first();
+	}
+
+	public deleteTodo(id: number): Promise<void> {
+		return this.connection(DB.TABLE_TODO)
+			.where({ id })
+			.delete();
+	}
+
+	public editTodo(todo: ITodo): Promise<void> {
+		const id = todo.id;
+		return this.connection(DB.TABLE_TODO)
+			.where({ id })
+			.update(todo);
+	}
+
+	public addTodo(name: string, listId: number): Promise<void> {
+		const now = new Date().toISOString();
+		return this.connection(DB.TABLE_TODO).insert({
+			name,
+			listId,
+			createdAt: now,
+			updatedAt: now
+		});
+	}
 
 	private constructor(dbPath: string) {
 		this.connection = Knex({

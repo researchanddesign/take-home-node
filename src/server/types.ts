@@ -8,7 +8,7 @@ export interface IList {
 
 export interface ITodo {
 	id: number;
-	mame: string;
+	name: string;
 	listId: number;
 	createdAt: string;
 	updatedAt: string;

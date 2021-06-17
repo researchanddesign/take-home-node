@@ -1,0 +1,28 @@
+<table mat-table [dataSource]="lists" class="mat-elevation-z8 demo-table">
+	<ng-container matColumnDef="id">
+		<th mat-header-cell *matHeaderCellDef>ID</th>
+		<td mat-cell *matCellDef="let list">{{ list.id }}</td>
+	</ng-container>
+	<ng-container matColumnDef="name">
+		<th mat-header-cell *matHeaderCellDef>Name</th>
+		<td mat-cell *matCellDef="let list">{{ list.name }}</td>
+	</ng-container>
+	<ng-container matColumnDef="createdAt">
+		<th mat-header-cell *matHeaderCellDef>Created At</th>
+		<td mat-cell *matCellDef="let list">{{ list.createdAt }}</td>
+	</ng-container>
+	<ng-container matColumnDef="updatedAt">
+		<th mat-header-cell *matHeaderCellDef>Updated At</th>
+		<td mat-cell *matCellDef="let list">{{ list.updatedAt }}</td>
+	</ng-container>
+	<ng-container matColumnDef="actions">
+		<th mat-header-cell *matHeaderCellDef>Actions</th>
+		<td mat-cell *matCellDef="let list">
+			<a mat-button [routerLink]="['/list', list.id]">View</a>
+			<a mat-button [routerLink]="['/', list.id, 'todos']">View ToDos</a>
+			<a mat-button [routerLink]="['/', list.id, 'todos', 'create']">Create ToDo</a>
+		</td>
+	</ng-container>
+	<tr mat-header-row *matHeaderRowDef="['id', 'name', 'createdAt', 'updatedAt', 'actions']"></tr>
+	<tr mat-row *matRowDef="let row; columns: ['id', 'name', 'createdAt', 'updatedAt', 'actions']"></tr>
+</table>
